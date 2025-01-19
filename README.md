@@ -29,6 +29,7 @@
 
     4. Optionally, if you want to see the database using mongodb compass, paste the following connection string in your mongodb compass.
             mongodb://localhost:27017
+    5. To Test the API, checkout the postman collection json file in the root directory of the project. 
 ## Codebase Overview
     - 'database' contains the prisma schema for the user table.
     - Since we are using TypeScript, all the code for our project is in 'src' directory.
