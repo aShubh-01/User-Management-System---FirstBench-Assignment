@@ -13,10 +13,10 @@
     - MongoDB Compass
 
 ## Steps to setup the project
-    1. Setting up database first!
-        - Make sure you have docker installed, using docker, start a port mapped mongo container with MONGO_INITDB_DATABASE environment variable and initialize a replica set inside the container. If you dont know how to do it, just paste and execute these commands one by one in the terminal.
-            1. docker run -d -v userDatabase:/data/db --name UserDatabaseContainer -e MONGO_INITDB_DATABASE=userDatabase -p 27017:27017 mongo --replSet rs0
-            2. docker exec -it UserDatabaseContainer mongosh
+###    1. Setting up database first!
+###        - Make sure you have docker installed, using docker, start a port mapped mongo container with MONGO_INITDB_DATABASE environment variable and initialize a replica set inside the container. If you dont know how to do it, just paste and execute these commands one by one in the terminal.
+###            1. docker run -d -v userDatabase:/data/db --name UserDatabaseContainer -e MONGO_INITDB_DATABASE=userDatabase -p 27017:27017 mongo --replSet rs0
+###            2. docker exec -it UserDatabaseContainer mongosh
             3. rs.initiate({_id: "rs0", members: [{_id: 0, host: "localhost:27017"}]});
         - Keep the terminal open while running the project.
 
