@@ -1,0 +1,23 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const config_1 = require("./config");
+const user_1 = require("./controllers/user");
+const auth_1 = require("./middlewares/auth");
+const appRouter = (0, express_1.default)();
+appRouter.use(express_1.default.json());
+appRouter.use((0, cors_1.default)());
+appRouter.post('/signup', auth_1.checkUser, user_1.createUser);
+appRouter.post('/admin-signup', auth_1.checkUser, user_1.createAdmin);
+appRouter.post('/login', user_1.loginUser);
+appRouter.post('/admin-login', user_1.loginAdmin);
+appRouter.use(auth_1.authenticateUser);
+appRouter.put('/update', auth_1.checkIsAccountActive, user_1.updateUser);
+appRouter.delete('/deactivate', user_1.deactivateUser);
+appRouter.use(auth_1.authenticateAdmin);
+appRouter.get('/list', user_1.getUsers);
+appRouter.listen(config_1.port, () => console.log(`Running on port ${config_1.port}`));

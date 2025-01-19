@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "d2c3f78e-9353-4cbc-b105-be5cefc05896",
+		"name": "User Management System - API collection",
+		"description": "This collection contains all the APIs needed to test the code",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34448969"
+	},
+	"item": [
+		{
+			"name": "SignUp User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzhjODJmZDg0NTZmZTRjMWMzNmY5NTciLCJyb2xlIjoiVVNFUiIsImlhdCI6MTczNzI2MTgyMX0.ChSdpSDfrWZvO7DpjO4pFpk1pRtSkkClOItScNMR-MY",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Test User\",\n    \"email\": \"testuser@gmail.com\",\n    \"password\": \"12345678\",\n    \"phoneNumber\": \"1234567890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Admin SignUp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzhjYWEzNThhYjEyMTU0NTAyNDZmNGUiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlhdCI6MTczNzI3MTg2MX0.QBHs9kxTd_LuCRz7BzfaN8nczSgMyaTLTc5XNdDMosY",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"email\": \"testadmin@gmail.com\",\n    \"password\": \"123password\",\n    \"phoneNumber\": \"0123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/admin-signup"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testuser@gmail.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testadmin@gmail.com\",\n    \"password\": \"123password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/admin-login"
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzhjODJmZDg0NTZmZTRjMWMzNmY5NTciLCJyb2xlIjoiVVNFUiIsImlhdCI6MTczNzI3NDYzOH0.jcH31UEEIzr12xb6m227DeLzSWtX8WMFyB9N_1zEeOM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/deactivate"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzhjODJmZDg0NTZmZTRjMWMzNmY5NTciLCJyb2xlIjoiVVNFUiIsImlhdCI6MTczNzI3NDYzOH0.jcH31UEEIzr12xb6m227DeLzSWtX8WMFyB9N_1zEeOM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"newTestUsername\",\n    \"password\": \"newPassword123\",\n    \"email\": \"newTestUserGmail@gmail.com\",\n    \"phoneNumber\": \"0987654321\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Get users - Admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzhjYWEzNThhYjEyMTU0NTAyNDZmNGUiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlhdCI6MTczNzI3NDk4MH0._49NOzepA2yN_e1G3yifAszKzzXSoWVA4dGT0FzZ8Kc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/list"
+			},
+			"response": []
+		}
+	]
+}
